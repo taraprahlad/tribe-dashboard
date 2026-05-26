@@ -1,0 +1,78 @@
+# ─────────────────────────────────────────────────────────────
+# Secrets — NEVER commit these. Add real values to .env locally.
+# ─────────────────────────────────────────────────────────────
+.env
+.env.*
+*.key
+secrets.toml
+.streamlit/secrets.toml
+
+# ─────────────────────────────────────────────────────────────
+# Model weights & large data — keep these OUT of git.
+# TRIBE v2 weights are CC BY-NC and huge; load them at runtime
+# from Hugging Face instead of committing them.
+# ─────────────────────────────────────────────────────────────
+weights/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Datasets & cached predictions (regenerate these, don't commit)
+data/
+datasets/
+cache/
+*.npy
+*.npz
+predictions/
+
+# ─────────────────────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ─────────────────────────────────────────────────────────────
+# Jupyter / Colab
+# ─────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ─────────────────────────────────────────────────────────────
+# Testing & coverage
+# ─────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ─────────────────────────────────────────────────────────────
+# Editors / IDEs
+# ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─────────────────────────────────────────────────────────────
+# OS cruft
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
