@@ -1,7 +1,7 @@
 # tribe-dashboard
-# TRIBE v2 Interpretability Dashboard
+# tribe v2 interpretability dashboard ᯓ★
 
-> 🚧 **work in progress.** i'm building this as a side project to learn ML
+> 🚧 **work in progress** i'm building this as a side project to learn ML
 > tooling, model interpretability, and neuroimaging visualization. it's going to
 > be a little scrappy as it comes together — the roadmap below is for tracking the situation.
 
@@ -11,53 +11,53 @@ activation) to images, audio, and text. the project builds tooling *around*
 TRIBE v2 — it doesn't modify or redistribute the model itself — to make its
 predictions visible and to ask *why* it predicts what it does.
 
-## Why
+## why?
 
 tribe v2 is a powerful model but kind of opaque: i want to be able to feed it a stimulus and get 
 back predicted brain activity. this dashboard makes those predictions explorable — rendering
 them on a 3D brain, comparing stimuli side by side, and using attribution
 methods to understand which input features drive activation in specific regions.
 
-## tech stack
+## tech stack!
 
-- **Python** — core language
-- **PyTorch** — model inference and gradient-based attribution
+- **python** — core language
+- **pytorch** — model inference and gradient-based attribution
 - **nilearn** — brain atlas projection and neuroimaging visualization
-- **Captum** — interpretability methods (saliency, Integrated Gradients)
-- **Streamlit** — interactive web UI
+- **captum** — interpretability methods (saliency, Integrated Gradients)
+- **streamlit** — interactive web UI
 
-## Roadmap
+## roadmap
 
-this doubles as my progress tracker. boxes get checked as features land (yay!).
+this is going to double as my progress tracker. boxes get checked as features land (yay!).
 
-**Foundations**
-- [X] Python / Git / PyTorch tune-up
+**foundations**
+- [X] python / git / pytorch tune-up
 - [ ] fMRI & nilearn literacy
 
-**Core pipeline**
-- [ ] tRIBE v2 running, inference on a single stimulus
+**core pipeline**
+- [ ] tribe v2 running, inference on a single stimulus
 - [ ] understand & document the model's output format
 - [ ] first brain visualization from a prediction
 - [ ] minimal Streamlit app: input → inference → brain render
 
-**Dashboard features**
+**dashboard features**
 - [ ] side-by-side stimulus comparison + difference view
 - [ ] browsable stimulus library with cached predictions
 - [ ] region drill-down (top-activating stimuli per region)
 - [ ] multi-modal input (image / audio / text)
 
-**Interpretability**
+**interpretability**
 - [ ] gradient saliency maps
 - [ ] integrated Gradients via Captum
 - [ ] input ablation
 - [ ] cross-stimulus representation analysis
 
-**Ship**
+**ship**
 - [ ] deploy (Hugging Face Spaces / Streamlit Cloud)
 - [ ] polish README with screenshots
 - [ ] write-up / blog post
 
-## Getting started
+## getting started
 
 > ⚠️ instructions are a placeholder right now and will firm up as the project does.
 
@@ -80,7 +80,7 @@ streamlit run app.py
 locally requires a CUDA-capable GPU. model weights are *not* included in this
 repo — they're loaded at runtime from Hugging Face (`facebook/tribev2`).
 
-## Project structure
+## project structure
 
 ```
 tribe-dashboard/
@@ -92,11 +92,11 @@ tribe-dashboard/
 └── README.md
 ```
 
-## License & attribution
+## license & attribution
 
-- **TRIBE v2** is created by Meta's FAIR team and released under **CC BY-NC**
+- **tribe v2** is created by meta's FAIR team and released under **CC BY-NC**
   (non-commercial). this project uses it for personal, non-commercial,
-  educational purposes. all credit for the model goes to Meta.
+  educational purposes. all credit for the model goes to meta.
 - the **tooling code in this repo** is my own work.
 
 ## Acknowledgments
