@@ -26,7 +26,7 @@ methods to understand which input features drive activation in specific regions.
 - **captum** — interpretability methods (saliency, Integrated Gradients)
 - **streamlit** — interactive web UI
 
-## roadmap
+## roadmap!
 
 this is going to double as my progress tracker. boxes get checked as features land (yay!).
 
@@ -57,7 +57,7 @@ this is going to double as my progress tracker. boxes get checked as features la
 - [ ] polish README with screenshots
 - [ ] write-up / blog post
 
-## getting started
+## let's get started!
 
 > ⚠️ instructions are a placeholder right now and will firm up as the project does.
 
@@ -80,7 +80,7 @@ streamlit run app.py
 locally requires a CUDA-capable GPU. model weights are *not* included in this
 repo — they're loaded at runtime from Hugging Face (`facebook/tribev2`).
 
-## project structure
+## project structure!
 
 ```
 tribe-dashboard/
@@ -99,7 +99,7 @@ tribe-dashboard/
   educational purposes. all credit for the model goes to meta.
 - the **tooling code in this repo** is my own work.
 
-## Acknowledgments
+## acknowledgments
 
 built on Meta FAIR's [TRIBE v2](https://github.com/facebookresearch/tribev2).
 brain visualization powered by [nilearn](https://nilearn.github.io/);
