@@ -6,9 +6,9 @@
 > be a little scrappy as it comes together — the roadmap below is for tracking the situation.
 
 an interactive dashboard for exploring and interpreting [Meta's TRIBE v2](https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/),
-an open-source foundation model that predicts human brain responses (fMRI
+an open-source foundation model that predicts human brain responses (fmri
 activation) to images, audio, and text. the project builds tooling *around*
-TRIBE v2 — it doesn't modify or redistribute the model itself — to make its
+tribe v2 — it doesn't modify or redistribute the model itself — to make its
 predictions visible and to ask *why* it predicts what it does.
 
 ## why?
@@ -48,14 +48,14 @@ this is going to double as my progress tracker. boxes get checked as features la
 
 **interpretability**
 - [ ] gradient saliency maps
-- [ ] integrated Gradients via Captum
+- [ ] integrated gradients via captum
 - [ ] input ablation
 - [ ] cross-stimulus representation analysis
 
 **ship**
-- [ ] deploy (Hugging Face Spaces / Streamlit Cloud)
-- [ ] polish README with screenshots
-- [ ] write-up / blog post
+- [ ] deploy (hugging face spaces / streamlit cloud)
+- [ ] polish readme with screenshots
+- [ ] write-up / blog post (might be better to link notion)
 
 ## let's get started!
 
@@ -76,9 +76,9 @@ cp .env.example .env
 streamlit run app.py
 ```
 
-**note on compute:** TRIBE v2 needs a GPU. i develop on google colab; running
-locally requires a CUDA-capable GPU. model weights are *not* included in this
-repo — they're loaded at runtime from Hugging Face (`facebook/tribev2`).
+**note on compute:** tribe v2 needs a gpu. i develop on google colab; running
+locally requires a cuda-capable gpu. model weights are *not* included in this
+repo — they're loaded at runtime from hugging face (`facebook/tribev2`).
 
 ## project structure!
 
