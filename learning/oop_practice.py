@@ -10,23 +10,23 @@ SAVE_FILE = Path(__file__).parent / "tasks.json"
 class Task:
     # need a description of the task and whether or not it's been completed
     def __init__(self, description):
-        self.description = description
-        self.done = False
+        self.description: str = description
+        self.done: bool = False
 
-    def mark_done(self): #switch to complete
+    def mark_done(self) -> None: #switch to complete
         self.done = True
 
-    def __str__(self): #what it looks like
+    def __str__(self) -> str: #what it looks like
         checkbox = "x" if self.done else " "
         return f"[{checkbox} {self.description}]"
     
-    def save(self):
+    def save(self) -> None:
         #write all tasks to disk as JSON.
         data = [{"description": t.description, "done": t.done} for t in self.tasks]
         with open(SAVE_FILE, "w") as f:
             json.dump(data, f, indent=2)
 
-    def load(self):
+    def load(self) -> None:
         #load tasks from disk if a save file exists
         if not SAVE_FILE.exists():
             return
@@ -41,27 +41,27 @@ class Task:
     
 #our to-do list is a collection of task objects
 class ToDoList:
-    def __init__(self):
+    def __init__(self) -> None:
         self.tasks = [] #starts empty and will be filled with task objects as we go along
 
     #the to-do list needs to add tasks, delete them, mark them complete and number them (for extra practice lol)
 
-    def add(self, description):
+    def add(self, description) -> None:
         self.tasks.append(Task(description))
     
-    def delete(self, number):
+    def delete(self, number) -> None:
         if 1 <= number <= len(self.tasks):
             self.tasks.pop(number - 1)
         else:
             print("gurl that task number doesn't exist tf")
     
-    def complete(self, number):
+    def complete(self, number) -> None:
         if 1 <= number <= len(self.tasks):
             self.tasks[number - 1].mark_done()
         else:
             print("gurl that task number doesn't exist tf")
     
-    def numberdisplay(self):
+    def numberdisplay(self) -> None:
         if not self.tasks:
             print("there's nothing to do")
         else:
