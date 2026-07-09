@@ -32,7 +32,7 @@ this is going to double as my progress tracker. boxes get checked as features la
 
 **foundations**
 - [X] python / git / pytorch tune-up
-- [ ] fMRI & nilearn literacy
+- [X] fMRI & nilearn literacy
 
 **core pipeline**
 - [ ] tribe v2 running, inference on a single stimulus
