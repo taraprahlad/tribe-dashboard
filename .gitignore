@@ -77,3 +77,10 @@ htmlcov/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# TRIBE v2 / Hugging Face model weights — huge, licensed, regenerable
+cache/
+learning/cache/
+**/cache/
+*.safetensors
+*.bin
