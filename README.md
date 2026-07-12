@@ -36,8 +36,8 @@ this is going to double as my progress tracker. boxes get checked as features la
 
 **core pipeline**
 - [X] tribe v2 running, inference on a single stimulus
-- [ ] understand & document the model's output format
-- [ ] first brain visualization from a prediction
+- [X] understand & document the model's output format
+- [X] first brain visualization from a prediction
 - [ ] minimal Streamlit app: input → inference → brain render
 
 **dashboard features**
