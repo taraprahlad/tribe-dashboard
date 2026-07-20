@@ -7,7 +7,7 @@ import streamlit as st
 st.title("unit converter")
 st.write("conversion between a few common units")
 
-#letting the user pick whihc unit they want to convert to
+#letting the user pick which unit they want to convert to
 conversion = st.selectbox(
     "what do you want to convert?",
     [
