@@ -29,4 +29,4 @@ elif conversion == "kilometers to miles":
     answer = amount / 1.60934
 
 if answer is not None:
-    st.metric(label="answer", value=round(result, 2))
+    st.metric(label="answer", value=round(answer, 2))
