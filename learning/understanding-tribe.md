@@ -36,3 +36,5 @@ plotter.plot_surf(
     norm_percentile=None,
 )
 ```
+**upon rendering**
+so it seems like predicted activation has a global level that varies quite drastically across timesteps, so raw difference maps display that offset. 
