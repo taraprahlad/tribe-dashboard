@@ -1,0 +1,5 @@
+id,title,notes,npy_file,n_timesteps,n_vertices
+sintel,Sintel,"fantasy animation! it contains rich visuals, an orchestral score and dialogue.",sintel_preds.npy,53,20484
+big_buck_bunny,Big Buck Bunny,bright cartoon comedy -- musical and almost wordless,big_buck_bunny_preds.npy,61,20484
+tears_of_steel,Tears of Steel,live action sci-fi with VFX! contains real human faces,tears_of_steel_preds.npy,61,20484
+elephants_dream,Elephants Dream,surreal abstract animation -- dialogue-heavy with unusual visuals,elephants_dream_preds.npy,60,20484
