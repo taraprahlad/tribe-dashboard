@@ -38,3 +38,6 @@ plotter.plot_surf(
 ```
 **upon rendering**
 so it seems like predicted activation has a global level that varies quite drastically across timesteps, so raw difference maps display that offset. 
+
+**important discovery!**
+in my library app, i tried to upload a stimulus called caminandes which is a short slap-stick commedy that's wordless and tribe didn't like it. even though tribe is "tri-modal" i think it leans a little more on the language modality because it starts by transcribing each word in a stimulus and then matching it to the exact point in time the word appears in the stimulus. since caminandes is wordless, tribe got confused and identified 3 words (probably just some noises), and was only able to transcribe two of them --- this was an issue because the threshold for words it can't match is 5% and in this case it would've been 33%. this is why caminandes is not in the library app lol.
