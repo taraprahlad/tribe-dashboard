@@ -38,11 +38,11 @@ this is going to double as my progress tracker. boxes get checked as features la
 - [X] tribe v2 running, inference on a single stimulus
 - [X] understand & document the model's output format
 - [X] first brain visualization from a prediction
-- [ ] minimal Streamlit app: input → inference → brain render
+- [X] minimal Streamlit app: input → inference → brain render
 
 **dashboard features**
-- [ ] side-by-side stimulus comparison + difference view
-- [ ] browsable stimulus library with cached predictions
+- [X] side-by-side stimulus comparison + difference view
+- [X] browsable stimulus library with cached predictions
 - [ ] region drill-down (top-activating stimuli per region)
 - [ ] multi-modal input (image / audio / text)
 
