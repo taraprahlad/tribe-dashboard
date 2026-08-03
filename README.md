@@ -43,8 +43,8 @@ this is going to double as my progress tracker. boxes get checked as features la
 **dashboard features**
 - [X] side-by-side stimulus comparison + difference view
 - [X] browsable stimulus library with cached predictions
-- [ ] region drill-down (top-activating stimuli per region)
-- [ ] multi-modal input (image / audio / text)
+- [X] region drill-down (top-activating stimuli per region)
+- [X] multi-modal input (image / audio / text)
 
 **interpretability**
 - [ ] gradient saliency maps
