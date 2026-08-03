@@ -1,5 +1,10 @@
 id,title,notes,npy_file,n_timesteps,n_vertices
-sintel,Sintel,"fantasy animation! it contains rich visuals, an orchestral score and dialogue.",sintel_preds.npy,53,20484
+sintel,Sintel,fantasy animation! it contains rich visuals + an orchestral score and dialogue,sintel_preds.npy,53,20484
 big_buck_bunny,Big Buck Bunny,bright cartoon comedy -- musical and almost wordless,big_buck_bunny_preds.npy,61,20484
 tears_of_steel,Tears of Steel,live action sci-fi with VFX! contains real human faces,tears_of_steel_preds.npy,61,20484
 elephants_dream,Elephants Dream,surreal abstract animation -- dialogue-heavy with unusual visuals,elephants_dream_preds.npy,60,20484
+dorian_audio,The Picture of Dorian Gray: Ch 13 (audio),english spoken prose (librivox reading),dorian_audio_preds.npy,60,20484
+aeneid_audio,The Aeneid (Dryden's Translation): Book VIII part 1 (audio),english spoken verse (librivox reading),aeneid_audio_preds.npy,60,20484
+italian_audio,Trionfo di Bacco e Arianna (audio),non-english (italian) speech experiment (librivox reading),italian_audio_preds.npy,60,20484
+dorian_text,Excerpt from The Picture of Dorian Gray: Ch. 13 (text),english prose text,dorian_text_preds.npy,238,20484
+aeneid_text,Excerpt from The Aeneid (Dryden's Translation): Book VIII part 1 (text),english verse text,aeneid_text_preds.npy,215,20484
