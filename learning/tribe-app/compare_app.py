@@ -43,16 +43,23 @@ def make_html(data, title): #this one isn't cached
     )
     return view.get_iframe(width = 500, height = 400)
 
+def demean(m):
+    return m - m.mean()
+
 @st.cache_data
 def render_timestep(t):
     preds = load_preds()
     return make_html(preds[t], f"timestep {t}")
 
 @st.cache_data
-def render_difference(a, b):
+def render_difference(a, b, mean_removed):
     preds = load_preds()
-    diff = preds[a] - preds[b]
-    return make_html(diff, f"difference: timestep {a} - timestep {b}")
+    if mean_removed:
+        diff = demean(preds[a]) - demean(preds[b])
+    else:
+        diff = preds[a] - preds[b]
+    label = "mean-removed" if mean_removed else "raw"
+    return make_html(diff, f"difference ({label}): timestep {a} - timestep {b}")
 
 #this is where the page starts
 
@@ -77,10 +84,13 @@ with col_b:
 
 st.subheader("difference (A - B)")
 
+mean_removed = st.checkbox("remove per-timestep mean", value = True)
+html = render_difference(timestep_a, timestep_b, mean_removed)
+
 if timestep_a == timestep_b:
     st.info("pick two different timesteps in order to see a difference map :)")
 else:
-    components.html(render_difference(timestep_a, timestep_b), height = 450)
+    components.html(render_difference(timestep_a, timestep_b, mean_removed), height = 450)
     st.caption(
         "red = A is more active than B. blue = B is more active than A." \
         "white = the two moments agree/are the same"
