@@ -44,3 +44,5 @@ in my library app, i tried to upload a stimulus called caminandes which is a sho
 
 stg (superior temporal gyrus) shows larger activation swings for speech-rich stimuli (i.e. tears of steel, sintel) rather than the near-wordless stimuli (i.e. big buck bunny) — which checks out bc we realized that leans heavily on the language modality.
 meanwhile, the occipital pole responds strongly across all stimuli including big buck bunny, so we have a dissociation consistent with each region tracking its expected modality.
+
+i played around with saliency maps for the stg and occipital pole reacting to a 30s clipping of the reading of the picture of dorian gray ch.13. there was a correlation of almost 0.88 percent! it seems like raw saliency is dominated by input magnitude but once you take z-scores to scale it, because the maps are normalized now, it seems like the activations across the regions aren't as different.
