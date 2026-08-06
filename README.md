@@ -47,8 +47,8 @@ this is going to double as my progress tracker. boxes get checked as features la
 - [X] multi-modal input (image / audio / text)
 
 **interpretability**
-- [ ] gradient saliency maps
-- [ ] integrated gradients via captum
+- [X] gradient saliency maps
+- [X] integrated gradients via captum
 - [ ] input ablation
 - [ ] cross-stimulus representation analysis
 
