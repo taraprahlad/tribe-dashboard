@@ -49,7 +49,7 @@ this is going to double as my progress tracker. boxes get checked as features la
 **interpretability**
 - [X] gradient saliency maps
 - [X] integrated gradients via captum
-- [ ] input ablation
+- [X] input ablation
 - [ ] cross-stimulus representation analysis
 
 **ship**
