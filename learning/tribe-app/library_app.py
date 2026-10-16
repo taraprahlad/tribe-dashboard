@@ -7,8 +7,18 @@ run it from inside the tribe app folder with the following: streamlit run librar
 
 also, note that it will expect library metadata and the preds.npy file."""
 
-import numpy as np
+# covering bases so that it doesn't crash (hopefully)
+
+import faulthandler; faulthandler.enable()   # same as the env var, built into the app
+
+import matplotlib
+matplotlib.use("Agg")          # must come BEFORE importing pyplot
+import matplotlib.pyplot as plt
+
 import pandas as pd
+pd.set_option("future.infer_string", False)   # must come BEFORE any read_csv
+
+import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
 from nilearn import datasets, plotting
