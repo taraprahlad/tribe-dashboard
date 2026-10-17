@@ -84,3 +84,7 @@ learning/cache/
 **/cache/
 *.safetensors
 *.bin
+
+# rendered brain html from old scratch scripts
+_brain.html
+brain_render.html
