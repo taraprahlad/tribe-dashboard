@@ -25,6 +25,10 @@ data/
 datasets/
 cache/
 *.npy
+# deployed app data: re-include despite *.npy above
+!learning/tribe-app/library/*_preds.npy
+!learning/tribe-app/library/atlas_map_left.npy
+!learning/tribe-app/library/attribution/*.npy
 *.npz
 predictions/
 
