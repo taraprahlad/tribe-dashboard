@@ -1,0 +1,5 @@
+{
+  "w": 10,
+  "stride": 5,
+  "n_timesteps": 200
+}
