@@ -52,3 +52,31 @@ my old torch pins for running the model in google colab no longer worked because
 
 **method notes**
 ablation is apparently forward-only -- i didn't have to uses requires_grad the way i did in ig. i pooled over timestep so that it would be easy to compare different regions, however the pooled STG scalar specifically was SIGNED so i had to interpret what the signs meant on the graph.
+
+**week 15 FINALLY DONE**
+more comprehensive stuff on my notion this is just to keep track of things
+firstly, environment recipe (with pinned runtime version -- A100, 07.2026):
+    pip uninstall -y torch torchvision torchaudio torchcodec
+    pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+    pip install tribev2[plotting], captum ;  nltk.download('punkt_tab')
+    # LAST, so nothing installed afterwards can override it:
+    pip install --force-reinstall --no-deps numpy==2.2.6 sympy==1.13.1
+
+    also colab's disk is wiped each time so save everything to gdrive!!!
+
+now, my findings:
+    - week 15 reproduced on the new gpu environment
+    - no clean dissociation between regions and modality -- all i could tell was that occipital is more sensitive to audio and
+      stg is more sensitive to video (quite chopped)
+    - a zero is how tribe encodes for a missing modality which is why tear's of steel seemed like it didn't stimulate anything
+      (zero baseline)
+    - video seems to be the most reliable modality bc it was 12x the control floor for stg
+    - occipital barely changes when any single modality is removed
+    - whisperx hallucinates words in wordless (but not soundless) clips -- seen via caminandes 2, beethoven's pastoral symphony
+      and trip to the moon (which is actually soundless)
+    - text stimuli are synthesized to speech so you need to look at them together ideally
+
+questions:
+    - why does post-intro narration *lower* stg prediction?
+    - why does stg depend on video for tears of steel?
+    - why is occipital not reacting to the removal of a single modality?
