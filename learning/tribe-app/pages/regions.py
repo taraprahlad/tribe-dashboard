@@ -80,6 +80,6 @@ with col_plot:
     )
 
 with col_brain:
-    st.subheader("where it is")
+    st.subheader("where is it?")
     st.image(render_region_png(region_index),
              caption=f"{region_name} (lateral view; medial regions may be hidden)")
