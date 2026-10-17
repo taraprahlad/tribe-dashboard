@@ -1,65 +1,39 @@
-"""tribe stimulus library browser: local
+"""tribe stimulus library browser (page of app.py)
 
-this should let you browse through a selection of pre-computed predictions. you can pick a stimulus from
-the dropdown, scrub through its timesteps and see the predicted brain response. 
+this should let you browse through a selection of pre-computed predictions. you can pick a
+stimulus from the dropdown, scrub through its timesteps and see the predicted brain response
+(left hemisphere).
 
-run it from inside the tribe app folder with the following: streamlit run library_app.py
+run the whole dashboard from the tribe-app folder with: streamlit run app.py"""
 
-also, note that it will expect library metadata and the preds.npy file."""
+import io
 
-# covering bases so that it doesn't crash (hopefully)
-
-import faulthandler; faulthandler.enable()   # same as the env var, built into the app
-
-import matplotlib
-matplotlib.use("Agg")          # must come BEFORE importing pyplot
 import matplotlib.pyplot as plt
-
-import pandas as pd
-pd.set_option("future.infer_string", False)   # must come BEFORE any read_csv
-
-import numpy as np
 import streamlit as st
-import streamlit.components.v1 as components
-from nilearn import datasets, plotting
+from nilearn import plotting
 
-st.set_page_config(layout = "wide")
-
-n_per_hemi = 10242
-LIBRARY_DIR = "library"
-
-# cached loaders!
-
-@st.cache_data
-def load_metadata():
-    return pd.read_csv(f"{LIBRARY_DIR}/library_metadata.csv")
-
-@st.cache_data
-def load_preds(npy_file):
-    """Load one stimulus's prediction array. Cached per file."""
-    return np.load(f"{LIBRARY_DIR}/{npy_file}")
- 
- 
-@st.cache_data
-def load_fsaverage():
-    return datasets.fetch_surf_fsaverage(mesh="fsaverage5")
+from tribe_shared import load_metadata, load_preds, load_fsaverage, N_PER_HEMI
 
 # rendering!
-
-import matplotlib.pyplot as plt
+# the figure is drawn, saved as png bytes, and closed right away. caching the bytes
+# (instead of the figure) means no figures pile up in memory: that pile-up was
+# the week 12 segfault.
 
 @st.cache_data
-def render(npy_file, timestep):
+def render_png(npy_file, timestep):
     preds = load_preds(npy_file)
     fsaverage = load_fsaverage()
     fig = plotting.plot_surf_stat_map(
-        surf_mesh = fsaverage["infl_left"],
-        stat_map = preds[timestep][:n_per_hemi],
-        cmap = "coolwarm",
-        symmetric_cbar = True,
-        title = f"timestep {timestep}",
+        surf_mesh=fsaverage["infl_left"],
+        stat_map=preds[timestep][:N_PER_HEMI],
+        cmap="coolwarm",
+        symmetric_cbar=True,
+        title=f"timestep {timestep}",
     )
-    return fig
+    buf = io.BytesIO()
+    fig.savefig(buf, format="png", bbox_inches="tight", dpi=120)
+    plt.close(fig)
+    return buf.getvalue()
 
 # the actual page
 
@@ -68,17 +42,19 @@ st.write("you can browse predicted brain responses across stimuli here.")
 
 meta = load_metadata()
 
-title = st.selectbox("choose a stimulus", meta["title"])
+title = st.selectbox("choose a stimulus", meta["title"].tolist())
 row = meta[meta["title"] == title].iloc[0]
 npy_file = row["npy_file"]
-n_timesteps = int(row["n_timesteps"])
+n_timesteps = load_preds(npy_file).shape[0]
 
 st.caption(row["notes"])
+if row["credit"]:
+    st.caption(f"source: {row['credit']}")
 
 timestep = st.slider("timestep", 0, n_timesteps - 1, 0)
 
-st.pyplot(render(npy_file, timestep))
+st.image(render_png(npy_file, timestep))
 st.caption(
-    f"{title} -- timestep {timestep} # {n_timesteps - 1}."
+    f"{title}: timestep {timestep} of {n_timesteps - 1}. "
     "red = above baseline, blue = below baseline, white = near baseline."
 )
