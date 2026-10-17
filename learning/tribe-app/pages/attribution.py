@@ -105,7 +105,10 @@ st.pyplot(fig)
 plt.close(fig)
 
 st.caption(NOTES[RUNS[run_label]])
-st.text(df.round(4).to_string())
+md = "| region | text | audio | video |\n|---|---|---|---|\n"
+for region, r in df.iterrows():
+    md += f"| {region} | {r['text']:.4f} | {r['audio']:.4f} | {r['video']:.4f} |\n"
+st.markdown(md)
 
 with st.expander("how to read this / caveats"):
     st.markdown(
