@@ -88,3 +88,5 @@ learning/cache/
 # rendered brain html from old scratch scripts
 _brain.html
 brain_render.html
+
+scratch/
