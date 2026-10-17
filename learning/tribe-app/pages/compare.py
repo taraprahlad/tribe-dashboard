@@ -54,7 +54,7 @@ def render_difference(npy_file, a, b, mean_removed):
 
 # this is where the page starts
 
-st.title("TRIBE Comparison View")
+st.title("tribe comparison view!")
 st.write("Compare predicted brain activity at two different moments!")
 
 meta = load_metadata()
